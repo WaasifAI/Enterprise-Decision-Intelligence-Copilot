@@ -9,6 +9,10 @@ print(df_customers.shape)
 
 # products keeping as it is no cleaning required
 df_products = pd.read_csv(RAW + 'olist_products_dataset.csv')
+df_products = df_products.rename(columns={
+    'product_name_lenght': 'product_name_length',
+    'product_description_lenght': 'product_description_length'
+})
 df_products.to_csv(PROCESSED + 'products.csv', index=False)
 print(df_products.shape)
 
